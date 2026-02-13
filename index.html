@@ -132,7 +132,6 @@
       <input id="email" type="text" placeholder="Ex.: gmrodrigues@ig.com" />
 
       <div class="row">
-        <!-- CORRIGIDO: fechamento correto do botão -->
         <button class="primary" id="btnDownload" type="button" disabled>Exportar Assinatura</button>
         <button id="btnClear" type="button">Limpar</button>
       </div>
@@ -154,7 +153,7 @@
 
   <script>
     (function () {
-      // Layout padrão (JPG)
+      
       const DEFAULT_LAYOUT_URL = "./assets/layout.jpg";
 
       const canvas = document.getElementById("sigCanvas");
@@ -185,8 +184,7 @@
       // Contatos (X mantido)
       const CONTACT_X = 148;
 
-      // NOVO: Y como CENTRO dos ícones (ajuste fino em +/- 1px se necessário)
-      // Se o centro não bater exatamente no seu layout final, ajuste apenas estes dois valores.
+      // NOVO: Y como CENTRO dos ícones
       const PHONE_CENTER_Y = 64;
       const EMAIL_CENTER_Y = 80;
 
@@ -276,7 +274,7 @@
         drawOverlay();
       }
 
-      // Download robusto: try/catch + toBlob + fallback toDataURL
+      // Download: try/catch + toBlob + fallback toDataURL
       function downloadJPEG() {
         try {
           const name = sanitizeText(fullNameEl.value, 60);
@@ -391,6 +389,7 @@
   </script>
 </body>
 </html>
+
 
 
 
